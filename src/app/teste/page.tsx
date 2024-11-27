@@ -1,11 +1,13 @@
+import Header from '../../components/Header/header'
 import TextFaq from "../../components/TextFaq"
 
 const Teste: React.FC = () => {
   return (
-    <div>
+    <>
+      <Header/>
       <h1>Home Page Teste</h1>
       <TextFaq />
-    </div>
+    /</>
   );
 };
 
