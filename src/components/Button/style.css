@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.junteSe{
+    @apply bg-foreground text-background w-36 h-10 rounded
+}
