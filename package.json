@@ -1,6 +1,6 @@
 {
   "name": "progirls",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "dev:inspect": "cross-env NODE_OPTIONS='--inspect' next dev --turbopack",
@@ -11,6 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "classnames": "^2.5.1",
     "next": "15.0.3",
     "react": "rc",
     "react-dom": "rc",

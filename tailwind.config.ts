@@ -8,9 +8,20 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundColor: {
+        pink: "#F13579",
+      },
+      borderColor: {
+        pink: "#F13579",
+      },
+      fontFamily: {
+        montserrat: ["var(--font-montserrat)"],
+        inter: ["var(--font-inter)"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        emphasis: "#F13579",
       },
     },
   },

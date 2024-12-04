@@ -1,0 +1,13 @@
+.destaque {
+  @apply pt-10 bg-emphasis;
+}
+
+.navegacao {
+  @apply px-14 py-6 flex justify-between border-b border-foreground;
+}
+.paginas {
+  @apply w-2/4 pt-2;
+}
+ul {
+  @apply flex justify-around align-middle;
+}

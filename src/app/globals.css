@@ -5,17 +5,31 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --emphasis: #f13579;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+/* @media (prefers-col) {
+  :root {or-scheme: dark
     --background: #0a0a0a;
     --foreground: #ededed;
+    --emphasis: #f13579;
   }
-}
+} */
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+}
+
+* {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }

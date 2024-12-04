@@ -1,24 +1,25 @@
-import TextComponent from "./TextComponent";
+import Text from "./TextComponent";
 
 export const TextFaq: React.FC = () => {
-return (
+  return (
     <div
-        style={{
+      style={{
         backgroundColor: "#f0f0f0",
-    }}
+      }}
     >
-        <TextComponent
-        text={<h1>Perguntas Frequentes</h1>}
+      <Text
         style={{
-            fontFamily: "Inter",
-            fontSize: "56px",
-            lineHeight: "72",
-            fontWeight: 600,
-            color: "#23272E",
+          fontFamily: "Inter",
+          fontSize: "56px",
+          lineHeight: "72",
+          fontWeight: 600,
+          color: "#23272E",
         }}
-        />
+      >
+        Perguntas Frequentes
+      </Text>
     </div>
-    );
+  );
 };
 
 export default TextFaq;
