@@ -19,7 +19,8 @@
     "react": "rc",
     "react-dom": "rc",
     "react-icons": "^5.4.0",
-    "tailwind-variants": "^0.3.0"
+    "tailwind-variants": "^0.3.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/node": "^22",
