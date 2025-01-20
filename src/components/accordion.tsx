@@ -1,13 +1,4 @@
-import {
-  AccordionContentProps,
-  AccordionItemProps,
-  AccordionTriggerProps,
-  Content,
-  Header,
-  Item,
-  Root,
-  Trigger,
-} from "@radix-ui/react-accordion";
+import * as Accordion from "@radix-ui/react-accordion";
 import clsx from "clsx";
 import React, { FC, forwardRef, ReactElement, RefAttributes } from "react";
 import { FaChevronDown } from "react-icons/fa";
@@ -15,56 +6,71 @@ import { FaChevronDown } from "react-icons/fa";
 type ItemProps = {
   children: [
     title: ReactElement<
-      AccordionTriggerProps & RefAttributes<HTMLButtonElement>,
+      Accordion.AccordionTriggerProps & RefAttributes<HTMLButtonElement>,
       "button"
     >,
     content: ReactElement<
-      AccordionContentProps & RefAttributes<HTMLDivElement>,
+      Accordion.AccordionContentProps & RefAttributes<HTMLDivElement>,
       "div"
     >,
   ];
 };
 
-const AccordionTrigger = forwardRef<HTMLButtonElement, AccordionTriggerProps>(
-  ({ children, ...props }, forwardedRef) => (
-    <Header>
-      <Trigger
-        {...props}
-        className={clsx("flex justify-between", props.className)}
-        ref={forwardedRef}
-      >
-        {children}
-        <FaChevronDown aria-hidden />
-      </Trigger>
-    </Header>
-  )
-);
+const AccordionTrigger = forwardRef<
+  HTMLButtonElement,
+  Accordion.AccordionTriggerProps
+>(({ children, ...props }, forwardedRef) => (
+  <Accordion.Header className="w-full group">
+    <Accordion.Trigger
+      {...props}
+      className={clsx(
+        "flex justify-between items-center w-full",
+        "[&[data-state=open]>svg]:scale-[-1]",
+        "group-hover:[&>svg]:scale-x-[-1]",
+        props.className
+      )}
+      ref={forwardedRef}
+    >
+      {children}
+      {/* Chevrão */}
+      <FaChevronDown className="ml-auto" aria-hidden />
+    </Accordion.Trigger>
+  </Accordion.Header>
+));
 
 const AccordionItem: FC<
-  ItemProps & AccordionItemProps & RefAttributes<HTMLDivElement>
+  ItemProps & Accordion.AccordionItemProps & RefAttributes<HTMLDivElement>
 > = ({ children, ...props }) => {
   const [title, content] = children;
 
   return (
-    <Item {...props}>
+    <Accordion.Item {...props}>
       <AccordionTrigger {...title.props} />
-      <Content {...content.props} />
-    </Item>
+      <Accordion.Content
+        className={clsx(
+          "data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
+          "overflow-hidden",
+          content.props.className
+        )}
+        {...content.props}
+      />
+    </Accordion.Item>
   );
 };
 
 export const AccordionDemo = ({ className }: { className?: string }) => (
-  <Root
+  <Accordion.Root
     className={clsx(
       "p-2 shadow bg-[#F6F7F9]",
       "odd:[&>*]:bg-white",
       "flex flex-col gap-2 my-4 rounded-lg",
+      "[&_*]:transition-all [&_*]:duration-[400ms] [&_*]:ease-in-out",
       className
     )}
     type="single"
     collapsible
   >
-    <AccordionItem value="item-1" className="p-4 rounded-lg shadow">
+    <AccordionItem value="item-1" className="rounded-lg shadow">
       <div>O que é A Programmer Girl2?</div>
 
       <div>
@@ -96,7 +102,7 @@ export const AccordionDemo = ({ className }: { className?: string }) => (
         técnico.
       </div>
     </AccordionItem>
-  </Root>
+  </Accordion.Root>
 );
 
 AccordionTrigger.displayName = "AccordionTrigger";
