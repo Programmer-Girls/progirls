@@ -1,4 +1,3 @@
-import TextFaq from "@/components/TextFaq";
 import React from "react";
 import { Text } from "@/components/text";
 import Button from "@/components/button";
@@ -11,7 +10,7 @@ import {
   TiSocialYoutube,
 } from "react-icons/ti";
 import Link from "next/link";
-
+import { AccordionDemo } from "@/components/accordion";
 const Teste: React.FC = () => {
   return (
     <div>
@@ -78,7 +77,9 @@ const Teste: React.FC = () => {
         />
       </div>
 
-      <TextFaq />
+      {/* <TextFaq /> */}
+
+      <AccordionDemo />
     </div>
   );
 };
