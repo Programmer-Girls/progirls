@@ -3,14 +3,15 @@
   "version": "0.1.2",
   "private": true,
   "scripts": {
-    "dev:inspect": "cross-env NODE_OPTIONS='--inspect' next dev --turbopack",
-    "dev": "next dev --turbopack",
     "build": "next build",
-    "next": "next",
-    "start": "next start",
+    "dev": "next dev --turbopack",
+    "dev:inspect": "cross-env NODE_OPTIONS='--inspect' next dev --turbopack",
     "lint": "next lint",
-    "test": "npm version",
-    "prepare": "husky"
+    "next": "next",
+    "prepare": "husky",
+    "sort": "sort-package-json",
+    "start": "next start",
+    "test": "npm version"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.2",
@@ -35,7 +36,11 @@
     "husky": "^9.1.7",
     "postcss": "^8",
     "prettier": "^3.4.2",
+    "sort-package-json": "^2.14.0",
     "tailwindcss": "^4.0.1",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": "^22"
   }
 }
