@@ -1,5 +1,3 @@
-import "./style.css";
-
 import classnames from "classnames";
 
 type ButtonProps = {

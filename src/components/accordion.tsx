@@ -61,16 +61,16 @@ const AccordionItem: FC<
 export const AccordionDemo = ({ className }: { className?: string }) => (
   <Accordion.Root
     className={clsx(
-      "p-2 shadow bg-[#F6F7F9]",
-      "odd:[&>*]:bg-white",
+      "p-2 shadow-2xs bg-[#F6F7F9]",
+      "odd:*:bg-white",
       "flex flex-col gap-2 my-4 rounded-lg",
-      "[&_*]:transition-all [&_*]:duration-[400ms] [&_*]:ease-in-out",
+      "**:transition-all **:duration-[400ms] **:ease-in-out",
       className
     )}
     type="single"
     collapsible
   >
-    <AccordionItem value="item-1" className="rounded-lg shadow">
+    <AccordionItem value="item-1" className="rounded-lg shadow-2xs">
       <div>O que é A Programmer Girl2?</div>
 
       <div>
@@ -81,7 +81,7 @@ export const AccordionDemo = ({ className }: { className?: string }) => (
       </div>
     </AccordionItem>
 
-    <AccordionItem value="item-2" className="p-4 rounded-lg shadow">
+    <AccordionItem value="item-2" className="p-4 rounded-lg shadow-2xs">
       <div>O que é A Programmer Girl2?</div>
 
       <div>
@@ -92,7 +92,7 @@ export const AccordionDemo = ({ className }: { className?: string }) => (
       </div>
     </AccordionItem>
 
-    <AccordionItem value="item-3" className="p-4 rounded-lg shadow">
+    <AccordionItem value="item-3" className="p-4 rounded-lg shadow-2xs">
       <div>O que é A Programmer Girl2?</div>
 
       <div>
