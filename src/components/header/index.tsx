@@ -1,5 +1,4 @@
 import Image from "next/image";
-import "./style.css";
 import Link from "next/link";
 import Button from "@/components/button";
 
@@ -8,7 +7,7 @@ export default function Header() {
     <header className="w-full border-b border-black">
       <div className="destaque"></div>
       <section className="navegacao flex justify-items-center overflow-x-hidden">
-        <div className="min-w-[150px] md:min-w-[100px] flex-shrink-0">
+        <div className="min-w-[150px] md:min-w-[100px] shrink-0">
           <Link href="/">
             <Image
               src="proGirls.svg"

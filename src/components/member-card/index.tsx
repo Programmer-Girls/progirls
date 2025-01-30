@@ -1,9 +1,8 @@
 import { Text } from "@/components/text";
 import clsx from "clsx";
 import Link from "next/link";
-import { FiGithub } from "react-icons/fi";
 import { MdPerson2 } from "react-icons/md";
-import { TiSocialLinkedin } from "react-icons/ti";
+import { TiSocialGithub, TiSocialLinkedin } from "react-icons/ti";
 import { Image } from "@/components/image";
 import { SocialIcon } from "@/components/social-icon";
 
@@ -36,6 +35,7 @@ export default function MemberCard({
         "relative flex flex-col max-w-96 p-8 rounded-2xl shadow-xl gap-7 overflow-hidden",
         "transition-all duration-300 ease-in-out",
         "hover:shadow-2xl hover:scale-[1.01]",
+        "min-w-80",
         className
       )}
     >
@@ -71,7 +71,7 @@ export default function MemberCard({
 
         <Link href={link_github}>
           <SocialIcon>
-            <FiGithub size={30} />
+            <TiSocialGithub size={30} />
           </SocialIcon>
         </Link>
 

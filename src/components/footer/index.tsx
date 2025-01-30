@@ -1,5 +1,4 @@
 import Image from "next/image";
-import "./style.css";
 export default function Footer() {
   return (
     <footer className="w-full overflow-x-hidden overflow-y-hidden bottom-0">
