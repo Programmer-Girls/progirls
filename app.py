@@ -16,6 +16,8 @@ db.init_app(app)
 
 with app.app_context():
     db.create_all()
+    
+
 
 # Verifica se a tabela está vazia para não duplicar e adiciona os dados na tabela
     if not Adms.query.first():
@@ -27,11 +29,18 @@ with app.app_context():
             Adms(name="Lariane Azevedo", cargo="Coordenadora", imagem="image/lari.jpg"),
             Adms(name="Danielle Costa", cargo="Coordenadora", imagem="image/dani.jpg"),
         ]
+        
 
         db.session.add_all(adms_para_adicionar)
         db.session.commit()
 
 
+    # Função para Atualizar nome da Leticya se já existir com nome antigo
+"""     leticya = Adms.query.filter_by(name="Leticya Locha").first()
+    if leticya:
+        leticya.name = "Letycia Locha"
+        db.session.commit()
+        print("Nome atualizado com sucesso.") """
 #rota para redirecionamento
 
 app.add_url_rule('/', 'home', UserController.home)
