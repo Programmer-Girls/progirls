@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progirls</title>
+</head>
+<body>
+    <h1>Sobre Adms (teste)</h1>
+
+    {% for adm in adms %}
+        <div style="margin-bottom:20px;">
+            <h3>{{ adm.name }} - {{ adm.cargo }}</h3>
+            <img src="{{ url_for('static', filename=adm.imagem) }}" alt="{{ adm.name }}" width="150" />
+        </div>
+    {% endfor %}
+</body>
+</html>
